@@ -8,8 +8,13 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(10), //Çevre ile arada mesafe oluşturur
+      padding: EdgeInsets.all(10), //içten boşluk oluşturur
+      width: double.infinity, //Max boyut uzunluğu verir.
       child: Text(
         questionText,
+        style: TextStyle(fontSize: 25),
+        textAlign: TextAlign.center,
       ),
     );
   }
