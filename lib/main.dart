@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import 'answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,12 +22,6 @@ class _MyAppState extends State<MyApp> {
     'What is favorite animal?',
   ];
 
-  void changeQuestion() {
-    setState(() {
-      questionIndex = questionIndex + 1;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -41,14 +36,8 @@ class _MyAppState extends State<MyApp> {
             Question(
               questionList[questionIndex],
             ),
-            ElevatedButton(
-              onPressed: (changeQuestion),
-              child: Text('Button1'),
-            ),
-            ElevatedButton(
-              onPressed: (changeQuestion),
-              child: Text('Button2'),
-            ),
+            Answer().callBackFonk(),
+            Answer(questionIndex),
           ],
         ),
       ),
